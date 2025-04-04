@@ -1,0 +1,21 @@
+api_platform:
+    title: CRM API
+    version: 1.0.0
+    defaults:
+        stateless: true
+        cache_headers:
+            vary: ['Content-Type', 'Authorization', 'Origin']
+    use_symfony_listeners: true
+    formats:
+        jsonld: [ 'application/ld+json' ]
+        json: [ 'application/json' ]
+        html: [ 'text/html' ] # boshqa kerakli formatlar
+    swagger:
+        api_keys:
+            JWT:
+                name: Authorization
+                type: header
+    collection:
+        pagination:
+            enabled: true
+            items_per_page_parameter_name: itemsPerPage
